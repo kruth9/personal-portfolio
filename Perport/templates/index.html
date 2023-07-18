@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/skills.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'index' %}" class="logo">PRASHANNA</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="{% static 'images/stars.png' %}" id="stars" >
+        <img src="{% static 'images/moon.png' %}" id="moon" >
+        <img src="{% static 'images/mountains_behind.png' %}" id="mountain_behind" >
+        <h2 id="text">HELLO THERE</h2>
+        <a href="#" id="btn">Explore</a>
+        <img src="{% static 'images/mountain.png' %}" id="mountain_front" >
+    </section>
+    <section class="sec" id="home">
+        <div class="home-text">
+            <h3>Hello, I'm</h3>
+            <h1>Prashanna Shrestha</h1>
+            <h5>A full stack developer <span> From Nepal</span></h5>
+            <p>I'm cretive web designer and back-end developer based in Nepal, and I'm very passionate <br> 
+                and dedicted to my work.</p>
+            <div class="social">
+                <a href="#"><box-icon type='logo' name='linkedin'></box-icon></a>
+                <a href="#"><box-icon name='github' type='logo' ></box-icon></a>
+            </div>
+            <a href="#" class="btn">About Me</a>
+        </div>
+
+        <div class="home-img">
+            <img src="{% static 'images/main.png' %}">
+        </div>
+    </section>
+
+    <!---about me-->
+
+    <div class="second" >
+        <div class="about">
+            <h1>ABOUT ME</h1>
+            <div class="text">
+                <p>
+                    "Meet prashanna Shrestha, a skilled and passionate Python and Django software developer. With expertise in both front-end and back-end development, prashanna Shrestha excels at creating robust and scalable web applications. Armed with a deep understanding of the Python programming language and the Django framework, prashanna Shrestha leverages their knowledge to build efficient and elegant solutions.
+    
+                    Whether it's building APIs, implementing database models, or designing seamless user interfaces, prashanna Shrestha is dedicated to crafting software solutions that exceed expectations. With their strong programming skills, extensive knowledge of Python and Django, and a keen eye for innovation, prashanna Shrestha is ready to contribute to and elevate any development team they join."
+    
+                    Note: Feel free to personalize and modify the description based on your specific skills, experiences, and achievements as a Python and Django software developer.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills">
+        <div class="skills-h">
+            <span>Skills</span>
+            <h3>front-end</h3>
+
+            <div class="container2">
+                <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+                <div class="project-box">
+                  <a href="#"><strong>Python</strong></a>
+                  <div class="project-box-footer yellow"></div>
+                </div>
+              
+                <div class="project-box">
+                  <a href="#"><strong>Django</strong></a>
+                  <div class="project-box-footer purple"></div>
+                </div>
+              
+                <div class="project-box">
+                  <a href="#"><strong>javascript</strong></a>
+                  <div class="project-box-footer light-red"></div>
+                </div>
+              
+                <div class="project-box">
+                  <a href="#"><strong>Blender</strong></a>
+                  <div class="project-box-footer light-green"></div>
+                </div>
+              </div>  
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="project-h">
+            <span>Let's See My work</span>
+            <h3>My Projects</h3>
+        </div>
+        <div class="project-i">
+            <img src="{% static 'images/project2.png' %}">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Odio accusantium, quibusdam labore laborum itaque provident quae, atque, quasi voluptate quia totam similique 
+                illum praesentium id placeat voluptas ex repudiandae a.</p>
+        </div>
+        
+    </div>
+    <div class="contact">
+        <div class="contact-container">
+            <div class="left-col">
+              <img class="logo" src="https://www.indonesia.travel/content/dam/indtravelrevamp/en/logo.png"/>
+            </div>
+            <div class="right-col">
+              <div class="theme-switch-wrapper">
+              <label class="theme-switch" for="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <div class="slider round"></div>
+            </label>
+            <div class="description">Dark Mode</div>
+          </div>
+              
+              <h1>Contact Me</h1>
+              <p>I'm Here To Make Your Next Project. Let's Work Together</p>
+              
+            <form id="contact-form" method="post" action="/">
+            {% csrf_token %}
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                <label for="phone_number">phone number</label>
+                <input type="number" id="phone" name="phone" placeholder="Your contact number" required>
+                <label for="message">Message</label>
+                <textarea rows="6" placeholder="Your Message" id="message" name="message" required></textarea>
+                <a href="javascript:void(0)"><button type="submit" id="submit" name="submit">Send</button></a>
+            
+          </form>
+          <div id="error"></div>
+          <div id="success-msg"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountain_behind = document.getElementById('mountain_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountain_front = document.getElementById('mountain_front');
+        let header = document.querySelector('header');
+
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountain_behind.style.top = value * 0.5 + 'px';
+            mountain_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 3 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        });
+    </script>
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }    
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+
+        
+    </script>
+    
+</body>
+</html>
